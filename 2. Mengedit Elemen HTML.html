@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengedit Elemen HTML</title>
+</head>
+<body>
+    <div id="box1">
+        <div id="p1">Paragraf 1</div>
+    </div>
+
+    
+    <script>
+        // edit HTML
+        // menambahkan elemen
+        let el = document.createElement("h2");
+        let text = document.createTextNode("Belajar Programming Online");
+        let box = document.getElementById("box1");
+        
+        el.appendChild(text);
+        box.appendChild(el);
+        
+        // menghapus elemen
+        // box.removeChild(el);
+        
+        // mengedit elemen
+        let el2 = document.createElement("h3");
+        let text2 = document.createTextNode("Belajar Sekarang!");
+        
+        // box.replaceChild(baru, lama);
+        el2.appendChild(text2);
+        let p1 = document.getElementById("p1");
+        box.replaceChild(el2, p1);
+
+
+    </script>
+
+</body>
+</html>

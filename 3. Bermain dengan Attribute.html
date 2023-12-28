@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bermain dengan Attribute</title>
+    <style>
+        .merah {
+            background: red;
+        }
+        
+        .black {
+            border : 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bermain Atrribute</h1>
+
+    <img src="gambar/github latihan pos.png" width=300 id="gambar" class="black">
+
+    <input type="text" value="nama" id="input">
+
+    <script>
+        let img = document.getElementById("gambar");
+        img.width = 400;
+        
+        // img.setAttribute("class", "merah");
+        img.className += " merah";
+
+
+        let input = document.getElementById("input");
+        input.value = "nama lengkap";
+        input.style.border = "3px solid blue";
+        input.style.backgroundColor = "lightskyblue";
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bermain dengan Attribute</title>
+    <style>
+        .merah {
+            background: red;
+        }
+        
+        .black {
+            border : 5px solid black;
+        }
+
+    </style>
+</head>
+<body onload="">
+    <h1>Bermain Atrribute</h1>
+
+    <img onclick="berubah()" src="gambar/github latihan pos.png" width=300 id="gambar" class="black">
+    <br>
+    <input type="text" value="nama" id="input">
+    <input type="submit" id="submit">
+    <p id="p1">Namanya adalah </p>
+
+    <script>
+        let img = document.getElementById("gambar");
+        img.width = 400;
+        
+        // img.setAttribute("class", "merah");
+        img.className += " merah";
+
+
+        let input = document.getElementById("input");
+        input.value = "nama lengkap";
+        input.style.border = "3px solid blue";
+        input.style.backgroundColor = "lightskyblue";
+
+        // event
+        // 1. menulis langsung pada tag HTML
+        function berubah() {
+            img.style.backgroundColor = "yellow";
+        }
+
+        // 2. menuliskan event pada text script langsung 
+        input.onclick = berubah;
+        function berubah2 () {
+            input.style.backgroundColor = "lightgreen";
+        }
+        function berubah3 () {
+            input.style.backgroundColor = "gold";
+        }
+        function berubah4 () {
+            img.style.backgroundColor = "green";
+        }
+        function berubah5 () {
+            img.style.backgroundColor = "blue";
+        }
+
+        // 3. addEventListener
+        input.addEventListener("click", berubah2);
+        input.addEventListener("mouseenter", berubah3 );
+        img.addEventListener("mouseenter", berubah4);
+        img.addEventListener("mouseleave", berubah5);
+
+
+        // event
+        let submit = document.getElementById("submit");
+        let p1 = document.getElementById("p1");
+
+        submit.onclick = function() {
+            let text = input.value;
+            p1.innerHTML += text;
+        }
+
+    </script>
+</body>
+</html>
